@@ -5,7 +5,7 @@ if [ ! -f "/etc/apt/sources.list.d/google-chrome.list" ]; then
     wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 fi
 
-if [ ! `command -v google-chrome-stable` ]; then
+command -v google-chrome-stable >/dev/null 2>&1 || {
     sudo apt-get update
     sudo apt-get install google-chrome-stable
-fi
+}

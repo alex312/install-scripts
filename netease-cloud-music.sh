@@ -9,10 +9,9 @@ fi
 
 grep 'alias netease-music=' $HOME/.bashrc >/dev/null
 if [ $? -eq 0 ]; then
-    echo update bashrc
-    sed -i '/^alias netease-music=/c alias netease-music="x netease-cloud-music"' $HOME/.bashrc
+    sed -i '/^alias netease-music=/c\alias netease-music="x netease-cloud-music"' $HOME/.bashrc
 else
-    sed -i '$ alias netease-music="x netease-cloud-music"' $HOME/.bashrc
+    sed -i '$a\alias netease-music="x netease-cloud-music"' $HOME/.bashrc
 fi
 
 exec "$SHELL"
